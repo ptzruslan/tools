@@ -62,15 +62,15 @@
    ```
 2. **Скачать скрипт с GitHub**:
    ```bash
-   wget https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/valdator_school/tech_lesson_2/practice_tech_01.sh -O practice_tech_01.sh
+   wget https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/validator/tech02/practice_tech_02.sh -O practice_tech_02.sh
    ```
 3. **Дать скрипту права на выполнение**:
    ```bash
-   chmod +x practice_tech_01.sh
+   chmod +x practice_tech_02.sh
    ```
 4. **Запустить скрипт (указав имя созданного пользователя)**:
    ```bash
-   ./practice_tech_01.sh <имя_пользователя>
+   ./practice_tech_02.sh <имя_пользователя>
    ```
 
 ## 📌 Что проверяет скрипт?
