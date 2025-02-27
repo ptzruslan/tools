@@ -22,7 +22,7 @@
 4. **Обновить систему и установить необходимые пакеты**:
    ```bash
    sudo apt update && sudo apt upgrade -y
-   sudo apt install mc btop nano screen git make build-essential jq -y
+   sudo apt install mc btop nano screen git make build-essential jq lz4 -y
    ```
 5. **Отключить вход под root в SSH**:
    - Отредактировать файл конфигурации SSH:
