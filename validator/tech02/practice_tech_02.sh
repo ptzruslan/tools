@@ -30,7 +30,7 @@ else
 fi
 
 # Проверка установленных пакетов
-REQUIRED_PKGS=(mc btop nano screen git make build-essential jq)
+REQUIRED_PKGS=(mc btop nano screen git make build-essential jq lz4)
 for PKG in "${REQUIRED_PKGS[@]}"; do
     if dpkg -l | grep -qw "$PKG"; then
         echo -e "${GREEN}✅ $PKG установлен${NC}"
