@@ -35,8 +35,7 @@
      ```
    - Перезапустить SSH:
      ```bash
-     sudo systemctl restart ssh
-     sudo systemctl restart sshd
+     sudo systemctl restart ssh 2>/dev/null || sudo systemctl restart sshd
      ```
 6. **Установить Go**:
    ```bash
