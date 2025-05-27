@@ -70,7 +70,7 @@ This script helps students verify if they have correctly configured their server
 
 2.  **Download the script from GitHub**:
     ```bash
-    wget [https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/validator/tech02/practice_tech_02.sh](https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/validator/tech02/practice_tech_02.sh) -O practice_tech_02.sh
+    wget [https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/validator/tech02/practice_tech_02_eng.sh](https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/validator/tech02/practice_tech_02_eng.sh) -O practice_tech_02.sh
     ```
 
 3.  **Give the script execution permissions**:
