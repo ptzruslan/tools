@@ -51,6 +51,9 @@ This script helps students verify if they have correctly configured their server
 
 7.  **Set Go environment variables** (e.g., in `~/.profile`):
     ```bash
+    nano ~/.profile
+    ```
+    ```bash
     export GOROOT=/usr/local/go
     export GOPATH=$HOME/go
     export GO111MODULE=on
