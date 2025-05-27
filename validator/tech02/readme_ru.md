@@ -45,6 +45,9 @@
    rm go1.23.4.linux-amd64.tar.gz
    ```
 7. **Объявить переменные среды для Go** (например в ~/.profile):
+```bash
+nano ~/.profile
+```
    ```bash
    export GOROOT=/usr/local/go
    export GOPATH=$HOME/go
