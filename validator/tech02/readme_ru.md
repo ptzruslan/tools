@@ -45,6 +45,9 @@
    rm go1.23.4.linux-amd64.tar.gz
    ```
 7. **Объявить переменные среды для Go** (например в ~/.profile):
+```bash
+nano ~/.profile
+```
    ```bash
    export GOROOT=/usr/local/go
    export GOPATH=$HOME/go
@@ -64,7 +67,7 @@
    ```
 2. **Скачать скрипт с GitHub**:
    ```bash
-   wget https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/validator/tech02/practice_tech_02.sh -O practice_tech_02.sh
+   wget https://raw.githubusercontent.com/ptzruslan/tools/refs/heads/main/validator/tech02/practice_tech_02_ru.sh -O practice_tech_02.sh
    ```
 3. **Дать скрипту права на выполнение**:
    ```bash
