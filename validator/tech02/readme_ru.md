@@ -19,12 +19,22 @@
    ```bash
    su <имя_пользователя> # Пример: su superman
    ```
-4. **Обновить систему и установить необходимые пакеты**:
+   #### 3.1 Произвести проверку подключения нового пользователя удалённо:
+   - Разорвать соединение с сервером:
+   ```bash
+   exit # Закрыть соединение с сервером
+   ```
+   - Подключиться к серверу используя новое имя пользователя! Не ROOT!
+   ```bash
+   ssh <имя_пользователя>@<ip_сервера>   # Пример: superman@192.168.208.11
+   ```
+
+5. **Обновить систему и установить необходимые пакеты**:
    ```bash
    sudo apt update && sudo apt upgrade -y
    sudo apt install mc btop nano screen git make build-essential jq lz4 -y
    ```
-5. **Отключить вход под root в SSH**:
+6. **Отключить вход для root по SSH**:
    - Отредактировать файл конфигурации SSH:
      ```bash
      sudo nano /etc/ssh/sshd_config
@@ -37,14 +47,14 @@
      ```bash
      sudo systemctl restart sshd 2>/dev/null || sudo systemctl restart ssh
      ```
-6. **Установить Go**:
+7. **Установить Go**:
    ```bash
    sudo rm -rvf /usr/local/go/
    wget https://golang.org/dl/go1.23.4.linux-amd64.tar.gz
    sudo tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
    rm go1.23.4.linux-amd64.tar.gz
    ```
-7. **Объявить переменные среды для Go** (например в ~/.profile):
+8. **Объявить переменные среды для Go** (например в ~/.profile):
 ```bash
 nano ~/.profile
 ```
