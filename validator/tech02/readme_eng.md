@@ -44,7 +44,7 @@ This script helps students verify if they have correctly configured their server
 6.  **Install Go**:
     ```bash
     sudo rm -rvf /usr/local/go/
-    wget [https://golang.org/dl/go1.23.4.linux-amd64.tar.gz](https://golang.org/dl/go1.23.4.linux-amd64.tar.gz)
+    wget https://golang.org/dl/go1.23.4.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
     rm go1.23.4.linux-amd64.tar.gz
     ```
