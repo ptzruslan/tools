@@ -44,7 +44,7 @@ This script helps students verify if they have correctly configured their server
    #### Sending the key to the server:
      - Windows OS: (don’t forget to change the username and IP address)
     ```bash
-    Get-Content "$env:USERPROFILE\.ssh\ed25519.pub" | ssh <username>@<server_ip> "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys"
+    Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub" | ssh <username>@<server_ip> "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys"
    ```
      - macOS: (don’t forget to change the username and IP address)
    ```bash
