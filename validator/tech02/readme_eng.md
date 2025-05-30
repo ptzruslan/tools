@@ -8,7 +8,7 @@ This script helps students verify if they have correctly configured their server
     ```bash
     ssh <username>@<server_ip>    # Example: root@192.168.208.11
     ```
-    *Important: Password input in the console IS NOT DISPLAYED!!!*
+    > ❗️Important: Password input in the console IS NOT DISPLAYED❗️
 
 2.  **Create a new user and grant them sudo privileges**:
     ```bash
