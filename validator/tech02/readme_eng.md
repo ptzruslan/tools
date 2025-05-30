@@ -12,7 +12,7 @@ This script helps students verify if they have correctly configured their server
 
 ---
 
-2.  **Create a new user and grant them sudo privileges**:
+2.  **Create a new user and grant sudo privileges**:
     ```bash
     sudo adduser <username>   # Example: sudo adduser superman
     sudo usermod -aG sudo <username>    # Example: sudo usermod -aG sudo superman
