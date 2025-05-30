@@ -8,26 +8,62 @@ This script helps students verify if they have correctly configured their server
     ```bash
     ssh <username>@<server_ip>    # Example: root@192.168.208.11
     ```
-    *Important: Password input in the console IS NOT DISPLAYED!!!*
+    > ❗️Important: Password input in the console IS NOT DISPLAYED❗️
 
-2.  **Create a new user and grant them sudo privileges**:
+---
+
+2.  **Create a new user and grant sudo privileges**:
     ```bash
     sudo adduser <username>   # Example: sudo adduser superman
     sudo usermod -aG sudo <username>    # Example: sudo usermod -aG sudo superman
     ```
+---
 
 3.  **Switch to the new user**:
     ```bash
     su <username> # Example: su superman
     ```
+---
 
 4.  **Update the system and install necessary packages**:
     ```bash
     sudo apt update && sudo apt upgrade -y
     sudo apt install mc btop nano screen git make build-essential jq lz4 -y
     ```
+---
 
-5.  **Disable root login via SSH**:
+5. **Key Generation and Login Setup**:<br>
+
+   >❗️ Important: These steps are performed on your **PC / Laptop / MacBook**, not on the server ❗️
+
+   #### Generating the SSH key:
+   ```bash
+   ssh-keygen -t ed25519  # !!! Do not change the default file name or path (just keep pressing Enter)! You can also set a passphrase for the key.
+    ```
+   
+   #### Sending the key to the server:
+     - Windows OS: (don’t forget to change the username and IP address)
+    ```bash
+    Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub" | ssh <username>@<server_ip> "mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys"
+   ```
+     - macOS: (don’t forget to change the username and IP address)
+   ```bash
+   cat ~/.ssh/id_ed25519.pub | ssh <username>@<server_ip> 'mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys'
+   ```
+   - Linux: (don’t forget to change the username and IP address)
+   ```bash
+   ssh-copy-id <username>@<server_ip>
+   ```
+   #### Testing SSH key-based connection
+    ***Open a new terminal window and connect to the server.***
+    > ❗️You might be prompted to enter the key’s passphrase (if you set one during key generation)❗️
+    
+    ```bash
+   ssh <имя_пользователя>@<ip_сервера>
+   ```
+---
+
+6.  **Disable root login via SSH**:
     * Edit the SSH configuration file:
         ```bash
         sudo nano /etc/ssh/sshd_config
@@ -40,16 +76,18 @@ This script helps students verify if they have correctly configured their server
         ```bash
         sudo systemctl restart sshd 2>/dev/null || sudo systemctl restart ssh
         ```
+---
 
-6.  **Install Go**:
+7.  **Install Go**:
     ```bash
     sudo rm -rvf /usr/local/go/
     wget https://golang.org/dl/go1.23.4.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
     rm go1.23.4.linux-amd64.tar.gz
     ```
+---
 
-7.  **Set Go environment variables** (e.g., in `~/.profile`):
+8.  **Set Go environment variables** (e.g., in `~/.profile`):
     ```bash
     nano ~/.profile
     ```
@@ -63,6 +101,7 @@ This script helps students verify if they have correctly configured their server
     ```bash
     source ~/.profile
     ```
+---
 
 ## 📥 How to Download and Run the Verification Script?
 
