@@ -53,6 +53,16 @@ else
     echo -e "${RED}❌ SSH is NOT running${NC}"
 fi
 
+# Check the latest login entries for the current user
+last_auth=$(sudo grep "$(whoami)" /var/log/auth.log | grep "Accepted" | tail -n 1)
+
+if echo "$last_auth" | grep -q "Accepted publickey"; then
+    echo -e "${GREEN}✅ SSH key authentication successful${NC}"
+else
+    echo -e "${RED}❌ Last login was not made using an SSH key${NC}"
+    echo -e "${RED}ℹ️ Last record: ${last_auth}${NC}"
+fi
+
 # Check Go installation and environment variables
 if [ -d "/usr/local/go" ]; then
     echo -e "${GREEN}✅ Go directory found at /usr/local/go${NC}"

@@ -1,6 +1,7 @@
 # Server Installation and Configuration Check
 
-This script helps students verify if they have correctly configured their server after renting it. It checks for user existence, installed packages, SSH configuration, as well as the correct installation of Go and environment variables.
+> These instructions will help students configure their server. The script then allows them to verify that the setup is correct. <br>
+The script checks for: user existence, installed packages, SSH configuration, as well as the correct installation of Go and environment variables.
 
 ## 🔧 What Should the Student Do?
 
