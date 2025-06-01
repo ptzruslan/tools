@@ -53,6 +53,16 @@ else
     echo -e "${RED}❌ SSH НЕ работает${NC}"
 fi
 
+# Проверяем последние записи входа текущего пользователя
+last_auth=$(grep "$(whoami)" /var/log/auth.log | grep "Accepted" | tail -n 1)
+
+if echo "$last_auth" | grep -q "Accepted publickey"; then
+    echo -e "${GREEN}✅ Подключение по SSH-ключу успешно${NC}"
+else
+    echo -e "${RED}❌ Последний вход не был выполнен с помощью SSH-ключа${NC}"
+    echo -e "${RED}ℹ️ Последняя запись: ${last_auth}${NC}"
+fi
+
 # Проверка установки Go и объявленных переменных среды
 if [ -d "/usr/local/go" ]; then
     echo -e "${GREEN}✅ Директория Go найдена в /usr/local/go${NC}"
