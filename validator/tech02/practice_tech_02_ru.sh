@@ -54,7 +54,7 @@ else
 fi
 
 # Проверяем последние записи входа текущего пользователя
-last_auth=$(grep "$(whoami)" /var/log/auth.log | grep "Accepted" | tail -n 1)
+last_auth=$(sudo grep "$(whoami)" /var/log/auth.log | grep "Accepted" | tail -n 1)
 
 if echo "$last_auth" | grep -q "Accepted publickey"; then
     echo -e "${GREEN}✅ Подключение по SSH-ключу успешно${NC}"
