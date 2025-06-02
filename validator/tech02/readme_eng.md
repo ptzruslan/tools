@@ -60,7 +60,7 @@ The script checks for: user existence, installed packages, SSH configuration, as
     > ❗️You might be prompted to enter the key’s passphrase (if you set one during key generation)❗️
     
     ```bash
-   ssh <имя_пользователя>@<ip_сервера>
+   ssh <username>@<server_ip>
    ```
 ---
 
